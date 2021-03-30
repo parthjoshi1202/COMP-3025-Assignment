@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Exercise Customizer-Login</string>
+    <string name="app_name">Exercise Customizer</string>
     <string name="login">Login</string>
     <string name="textView1">No Account? <a>Register</a> here</string>
     <string name="e_mail">E-Mail</string>
@@ -8,10 +8,11 @@
     <string name="enter_exercise_name">Enter Exercise Name</string>
     <string name="add_repetitions">Add Repetitions</string>
     <string name="add_instructions">Add Instructions</string>
-    <string name="add_any_notes">Add any Notes</string>
+
     <string name="add_exercise">Add Exercise</string>
     <string name="choose">Choose</string>
     <string name="add_image_name">Add Image Name</string>
     <string name="upload">Upload</string>
     <string name="exercises">Exercises</string>
+    <string name="add_notes_optional">Add Notes (Optional)</string>
 </resources>

@@ -14,5 +14,5 @@
     <string name="add_image_name">Add Image Name</string>
     <string name="upload">Upload</string>
     <string name="exercises">Exercises</string>
-    <string name="add_notes_optional">Add Notes (Optional)</string>
+    <string name="add_notes">Add Notes</string>
 </resources>

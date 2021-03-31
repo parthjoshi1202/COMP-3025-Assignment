@@ -1,5 +1,7 @@
 package com.example.comp3025assignment
 
+//attributes for exercise collection in firebase
+//also serves as model
 data class Exercise (
         var exercise_id: String?=null,
         var exercise_name: String?=null,

@@ -13,6 +13,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 
+//taken from https://firebase.google.com/docs/auth/android/firebaseui?authuser=0
 @Suppress("DEPRECATION")
 class SignInActivity: AppCompatActivity() {
         val RC_SIGN_IN=1234

@@ -9,17 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.COMP3025Assignment">
-        <activity android:name=".ExerciseRecyclerViewActivity"></activity>
-        <activity android:name=".SignInActivity" />
-
-
-        <activity android:name=".AddActivity" >
+        <activity android:name=".SignInActivity" >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
+        <activity android:name=".AddActivity" ></activity>
+        <activity android:name=".ExerciseRecyclerViewActivity"/>
         <activity android:name=".MainActivity" />
     </application>
 

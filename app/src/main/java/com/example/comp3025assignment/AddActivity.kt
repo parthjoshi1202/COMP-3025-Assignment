@@ -15,30 +15,31 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.StorageReference
 
+//adding an exercise , the upload image functionality does not work at the moment
 class AddActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddBinding
     private var imageUri: Uri? = null
 
-    private var downloadImageUrl: String? = null
-    private var ProductImagesRef: StorageReference? = null
-    private var ProductsRef: DatabaseReference? = null
+    //private var downloadImageUrl: String? = null
+    //private var ProductImagesRef: StorageReference? = null
+    //private var ProductsRef: DatabaseReference? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.chooseButton.setOnClickListener {
-            chooseImage()
-        }
+        //binding.chooseButton.setOnClickListener {
+         //   chooseImage()
+        //}
 
         //ensuring that all fields are populated
         binding.addExerciseButton.setOnClickListener {
 
             if (binding.addExerciseName.text.toString().isNotEmpty() && binding.addRepetitions.text.toString().isNotEmpty() &&
-                    binding.addInstructions.text.toString().isNotEmpty() && binding.addNotes.text.toString().isNotEmpty()
-                    && imageUri.toString().isNotEmpty()) {
+                    binding.addInstructions.text.toString().isNotEmpty() && binding.addNotes.text.toString().isNotEmpty()) {
+                   // && imageUri.toString().isNotEmpty()
 
                 val exercise = Exercise()
                 exercise.exercise_name = binding.addExerciseName.text.toString()
@@ -47,7 +48,7 @@ class AddActivity : AppCompatActivity() {
                 exercise.notes = binding.addNotes.text.toString()
 
 
-                // taken copied
+                // taken from https://www.youtube.com/watch?v=emDhMx_2-1E&list=PLxefhmF0pcPlqmH_VfWneUjfuqhreUz-O&index=13
                 /*val filePath = ProductImagesRef!!.child(imageUri!!.toString())
                 val uploadTask = filePath.putFile(imageUri!!)
                 uploadTask.addOnFailureListener { e ->
@@ -68,10 +69,10 @@ class AddActivity : AppCompatActivity() {
                         }
                     }
                 }
-                //taken copied
 
+                exercise.media = downloadImageUrl.toString()
 
-                exercise.media = downloadImageUrl.toString()*/
+                 */
 
                 val db = FirebaseFirestore.getInstance().collection("exercise")
                 exercise.exercise_id = db.document().id
@@ -97,6 +98,7 @@ class AddActivity : AppCompatActivity() {
         }
     }
 
+    //opens gallery in user's phone + filtering type of media which is "image"
     private fun chooseImage() {
 
         val intent=Intent()
@@ -106,7 +108,7 @@ class AddActivity : AppCompatActivity() {
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         // compare the resultCode with the request code
         if (requestCode == galleryReq && resultCode== Activity.RESULT_OK && data!=null) {
@@ -115,8 +117,9 @@ class AddActivity : AppCompatActivity() {
             binding.exerciseImageView!!.setImageURI(imageUri)
         }
 
-    }
+    }*/
 
+    //request code to open gallery in the phone
     companion object {
         private const val galleryReq = 1
     }

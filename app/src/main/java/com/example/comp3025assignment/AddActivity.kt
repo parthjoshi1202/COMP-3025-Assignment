@@ -34,6 +34,11 @@ class AddActivity : AppCompatActivity() {
          //   chooseImage()
         //}
 
+        binding.ListButton.setOnClickListener {
+            val intent = Intent(this, ExerciseRecyclerViewActivity::class.java)
+            startActivity(intent)
+        }
+
         //ensuring that all fields are populated
         binding.addExerciseButton.setOnClickListener {
 

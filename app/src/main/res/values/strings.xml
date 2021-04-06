@@ -15,4 +15,5 @@
     <string name="upload">Upload</string>
     <string name="exercises">Exercises</string>
     <string name="add_notes">Add Notes</string>
+    <string name="go_to_list">Go to List</string>
 </resources>

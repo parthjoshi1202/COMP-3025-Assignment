@@ -16,10 +16,10 @@ class RecyclerViewAdapter (val context: Context,
                            val exercises: List<Exercise>) :RecyclerView.Adapter<RecyclerViewAdapter.ExerciseViewHolder>()
 {
         inner class ExerciseViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-            val exerciseNameRecyclerTextView=itemView.findViewById<TextView>(R.id.addExerciseName)
-            val recyclerAddRepetitionTextView=itemView.findViewById<TextView>(R.id.addRepetitions)
-            val recyclerAddInstructionsTextView=itemView.findViewById<TextView>(R.id.addInstructions)
-            val recyclerAddNotesTextView=itemView.findViewById<TextView>(R.id.addNotes)
+            val exerciseNameRecyclerTextView=itemView.findViewById<TextView>(R.id.exerciseNameRecyclerTextView) //addExerciseName
+            val recyclerAddRepetitionTextView=itemView.findViewById<TextView>(R.id.recyclerAddRepetitionTextView) //addRepetitions
+            val recyclerAddInstructionsTextView=itemView.findViewById<TextView>(R.id.recyclerAddInstructionsTextView) //addInstructions
+            val recyclerAddNotesTextView=itemView.findViewById<TextView>(R.id.recyclerAddNotesTextView) //addNotes
         }
 
     override fun getItemCount(): Int {

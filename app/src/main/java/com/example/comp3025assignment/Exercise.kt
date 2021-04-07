@@ -8,5 +8,5 @@ data class Exercise (
         var repetitions: String?=null,
         var instructions: String?=null,
         var notes: String?=null
-        //, var media: String?=null
+       // , var media: String?=null
 )

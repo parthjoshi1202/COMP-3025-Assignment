@@ -16,4 +16,9 @@
     <string name="exercises">Exercises</string>
     <string name="add_notes">Add Notes</string>
     <string name="go_to_list">Go to List</string>
+    <string name="search">Search</string>
+    <string name="more">More</string>
+    <string name="your_exercises">Your Exercises</string>
+    <string name="logout">Logout</string>
+    <string name="list_of_exercises">List of Exercises</string>
 </resources>

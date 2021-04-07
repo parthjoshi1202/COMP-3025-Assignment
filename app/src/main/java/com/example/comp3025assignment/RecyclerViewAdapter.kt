@@ -20,6 +20,7 @@ class RecyclerViewAdapter (val context: Context,
             val recyclerAddRepetitionTextView=itemView.findViewById<TextView>(R.id.recyclerAddRepetitionTextView) //addRepetitions
             val recyclerAddInstructionsTextView=itemView.findViewById<TextView>(R.id.recyclerAddInstructionsTextView) //addInstructions
             val recyclerAddNotesTextView=itemView.findViewById<TextView>(R.id.recyclerAddNotesTextView) //addNotes
+            //val exerciseRecyclerImageView=itemView.findViewById<TextView>(R.id.exerciseRecyclerImageView)
         }
 
     override fun getItemCount(): Int {
@@ -39,6 +40,8 @@ class RecyclerViewAdapter (val context: Context,
             recyclerAddRepetitionTextView.text=exercise.repetitions
             recyclerAddInstructionsTextView.text=exercise.instructions
             recyclerAddNotesTextView.text=exercise.notes
+
+           // exerciseRecyclerImageView.text=exercise.media
         }
 
         //holder.itemView.setOnClickListener{

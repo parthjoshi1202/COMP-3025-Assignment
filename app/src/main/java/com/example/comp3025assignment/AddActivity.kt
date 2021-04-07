@@ -1,9 +1,13 @@
 package com.example.comp3025assignment
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.Intent.ACTION_GET_CONTENT
+import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -11,30 +15,49 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.provider.FontsContractCompat.FontRequestCallback.RESULT_OK
 import com.example.comp3025assignment.databinding.ActivityAddBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.StorageReference
+import java.io.File
 
 //adding an exercise , the upload image functionality does not work at the moment
 class AddActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddBinding
-    private var imageUri: Uri? = null
+    private val authDb= FirebaseAuth.getInstance()
 
+    //variable for exercise picture
+    private val REQUEST_CODE=1000
+    private val PERMISSION_CODE = 1001
+    private lateinit var filePhoto: File
+    private val FILE_NAME="photo"
+
+    // private var imageUri: Uri? = null
     //private var downloadImageUrl: String? = null
     //private var ProductImagesRef: StorageReference? = null
     //private var ProductsRef: DatabaseReference? = null
 
+    @SuppressLint("QueryPermissionNeeded")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //binding.chooseButton.setOnClickListener {
-         //   chooseImage()
-        //}
+        /*binding.chooseButton.setOnClickListener {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_DENIED){
+                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+                    requestPermissions(permissions, PERMISSION_CODE)
+                } else{
+                    chooseImage()
+                }
+            }else{
+                chooseImage()
+            }
+        }*/
 
-        binding.ListButton.setOnClickListener {
+        binding.listButton.setOnClickListener {
             val intent = Intent(this, ExerciseRecyclerViewActivity::class.java)
             startActivity(intent)
         }
@@ -106,11 +129,37 @@ class AddActivity : AppCompatActivity() {
     //opens gallery in user's phone + filtering type of media which is "image"
     private fun chooseImage() {
 
-        val intent=Intent()
-        intent.setType("image/*")
-        intent.setAction(Intent.ACTION_GET_CONTENT)
-        startActivityForResult(intent,galleryReq)
+        val intent=Intent(Intent.ACTION_PICK) //it was () originally
+        intent.type = "image/*"
+        startActivityForResult(intent, REQUEST_CODE)
+    //intent.setType("image/*")
+        //intent.setAction(Intent.ACTION_GET_CONTENT)
+        //startActivityForResult(intent,galleryReq)
 
+    }
+
+    override fun onRequestPermissionsResult(
+            requestCode: Int,
+            permissions: Array<out String>,
+            grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when(requestCode){
+            PERMISSION_CODE -> {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    chooseImage()
+                }else{
+                    Toast.makeText(this,"Permission denied", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK){
+            binding.exerciseImageView.setImageURI(data?.data)
+        }
     }
 
     /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

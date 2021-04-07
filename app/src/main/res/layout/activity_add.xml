@@ -80,7 +80,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/ListButton"
+        android:id="@+id/listButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/go_to_list"
@@ -88,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!--<Button
+    <Button
         android:id="@+id/chooseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseButton" /> -->
+        app:layout_constraintTop_toBottomOf="@+id/chooseButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

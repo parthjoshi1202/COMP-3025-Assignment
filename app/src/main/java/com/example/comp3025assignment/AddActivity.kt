@@ -10,6 +10,8 @@ import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -57,10 +59,10 @@ class AddActivity : AppCompatActivity() {
             }
         }*/
 
-        binding.listButton.setOnClickListener {
+        /*binding.logou.setOnClickListener {
             val intent = Intent(this, ExerciseRecyclerViewActivity::class.java)
             startActivity(intent)
-        }
+        }*/
 
         //ensuring that all fields are populated
         binding.addExerciseButton.setOnClickListener {
@@ -124,6 +126,41 @@ class AddActivity : AppCompatActivity() {
                 Toast.makeText(this, "All fields are mandatory", Toast.LENGTH_LONG).show()
             }
         }
+
+        setSupportActionBar(binding.mainToolBar.toolbar)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.action_add-> {
+                //startActivity(Intent(applicationContext, AddActivity::class.java))
+                return true
+            }
+            R.id.action_list-> {
+                startActivity(Intent(applicationContext, ExerciseRecyclerViewActivity::class.java))
+                return true
+            }
+            R.id.action_search-> {
+                //startActivity(Intent(applicationContext, AddActivity::class.java))
+                return true
+            }
+            R.id.your_exercises-> {
+                //startActivity(Intent(applicationContext, AddActivity::class.java))
+                return true
+            }
+            R.id.app_bar_logout-> {
+                authDb.signOut()
+                finish()
+                startActivity(Intent(applicationContext, SignInActivity::class.java))
+                //return true
+            }
+        }
+        return  super.onOptionsItemSelected(item)
     }
 
     //opens gallery in user's phone + filtering type of media which is "image"

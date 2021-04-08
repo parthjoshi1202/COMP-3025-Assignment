@@ -9,7 +9,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.comp3025assignment"
+        applicationId "com.lh1126914.comp3025assignment"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1

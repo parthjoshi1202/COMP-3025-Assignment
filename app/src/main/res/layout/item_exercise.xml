@@ -52,6 +52,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/capriola"
+            android:textSize="30sp"
             tools:text="Stretch" />
 
         <TextView

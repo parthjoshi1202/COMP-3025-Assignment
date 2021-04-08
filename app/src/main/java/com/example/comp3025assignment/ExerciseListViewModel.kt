@@ -21,9 +21,7 @@ class ExerciseListViewModel: ViewModel() {
 
     private fun loadExercises() {
         val db=FirebaseFirestore.getInstance().collection("exercise")
-
-        //following line had to be commented out due to some errors during execution of the app
-                //.orderBy("exercise_name", Query.Direction.ASCENDING)
+                .orderBy("exercise_name", Query.Direction.ASCENDING)
 
         db.addSnapshotListener { documents, exception ->
             Log.i("DB_RESPONSE","elements returned ${documents?.size()}")

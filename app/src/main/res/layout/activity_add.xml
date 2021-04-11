@@ -105,7 +105,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseButton" />
+        app:layout_constraintTop_toBottomOf="@+id/chooseButton"
+        tools:srcCompat="@tools:sample/avatars"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

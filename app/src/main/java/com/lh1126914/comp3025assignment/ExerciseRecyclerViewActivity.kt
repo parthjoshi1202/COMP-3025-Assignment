@@ -3,6 +3,7 @@ package com.lh1126914.comp3025assignment
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
@@ -32,6 +33,8 @@ class ExerciseRecyclerViewActivity : AppCompatActivity(){
         })
 
         setSupportActionBar(binding.mainToolBar.toolbar)
+
+        //binding.recyclerViewVertical=ScrollingMovementMethod()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.lh1126914.comp3025assignment.databinding.ActivityExerciseRecyclerViewBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -35,6 +36,7 @@ class ExerciseRecyclerViewActivity : AppCompatActivity(){
         setSupportActionBar(binding.mainToolBar.toolbar)
 
         binding.recyclerViewVertical.smoothScrollToPosition(0)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -52,14 +54,6 @@ class ExerciseRecyclerViewActivity : AppCompatActivity(){
                 //startActivity(Intent(applicationContext, ExerciseRecyclerViewActivity::class.java))
                 return true
             }
-            R.id.action_search-> {
-                //startActivity(Intent(applicationContext, AddActivity::class.java))
-                return true
-            }
-            R.id.your_exercises-> {
-                //startActivity(Intent(applicationContext, AddActivity::class.java))
-                return true
-            }
             R.id.app_bar_logout-> {
                 authDb.signOut()
                 finish()
@@ -69,5 +63,4 @@ class ExerciseRecyclerViewActivity : AppCompatActivity(){
         }
         return  super.onOptionsItemSelected(item)
     }
-
 }

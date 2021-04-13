@@ -34,14 +34,16 @@ class AddActivity : AppCompatActivity() {
         binding.addExerciseButton.setOnClickListener {
 
             if (binding.addExerciseName.text.toString().isNotEmpty() && binding.addRepetitions.text.toString().isNotEmpty() &&
-                    binding.addInstructions.text.toString().isNotEmpty() && binding.addNotes.text.toString().isNotEmpty()) {
-                   // && imageUri.toString().isNotEmpty()
+                    binding.addInstructions.text.toString().isNotEmpty() && binding.addNotes.text.toString().isNotEmpty()
+                && binding.addMedia.text.toString().isNotEmpty())  {
+
 
                 val exercise = Exercise()
                 exercise.exercise_name = binding.addExerciseName.text.toString()
                 exercise.repetitions = binding.addRepetitions.text.toString()
                 exercise.instructions = binding.addInstructions.text.toString()
                 exercise.notes = binding.addNotes.text.toString()
+                exercise.media = binding.addMedia.text.toString()
 
                 val db = FirebaseFirestore.getInstance().collection("exercise")
                 exercise.exercise_id = db.document().id
@@ -65,8 +67,6 @@ class AddActivity : AppCompatActivity() {
             }
         }
 
-
-
         setSupportActionBar(binding.mainToolBar.toolbar)
     }
 
@@ -85,14 +85,6 @@ class AddActivity : AppCompatActivity() {
                 startActivity(Intent(applicationContext, ExerciseRecyclerViewActivity::class.java))
                 return true
             }
-            R.id.action_search-> {
-                //startActivity(Intent(applicationContext, AddActivity::class.java))
-                return true
-            }
-            R.id.your_exercises-> {
-                //startActivity(Intent(applicationContext, AddActivity::class.java))
-                return true
-            }
             R.id.app_bar_logout-> {
                 authDb.signOut()
                 finish()
@@ -102,7 +94,4 @@ class AddActivity : AppCompatActivity() {
         }
         return  super.onOptionsItemSelected(item)
     }
-
-
-
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 
 /**
@@ -12,15 +13,17 @@ import androidx.recyclerview.widget.RecyclerView
  */
 
 
-class RecyclerViewAdapter (val context: Context,
-                           val exercises: List<Exercise>) :RecyclerView.Adapter<RecyclerViewAdapter.ExerciseViewHolder>()
+class RecyclerViewAdapter(
+    val context: Context,
+    val exercises: List<Exercise>
+) :RecyclerView.Adapter<RecyclerViewAdapter.ExerciseViewHolder>()
 {
         inner class ExerciseViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
             val exerciseNameRecyclerTextView=itemView.findViewById<TextView>(R.id.exerciseNameRecyclerTextView) //addExerciseName
             val recyclerAddRepetitionTextView=itemView.findViewById<TextView>(R.id.recyclerAddRepetitionTextView) //addRepetitions
             val recyclerAddInstructionsTextView=itemView.findViewById<TextView>(R.id.recyclerAddInstructionsTextView) //addInstructions
             val recyclerAddNotesTextView=itemView.findViewById<TextView>(R.id.recyclerAddNotesTextView) //addNotes
-            //val exerciseRecyclerImageView=itemView.findViewById<TextView>(R.id.exerciseRecyclerImageView)
+            val recyclerAddMediaTextView=itemView.findViewById<TextView>(R.id.recyclerAddMediaTextView)
         }
 
     override fun getItemCount(): Int {
@@ -40,15 +43,7 @@ class RecyclerViewAdapter (val context: Context,
             recyclerAddRepetitionTextView.text=exercise.repetitions
             recyclerAddInstructionsTextView.text=exercise.instructions
             recyclerAddNotesTextView.text=exercise.notes
-
-           // exerciseRecyclerImageView.text=exercise.media
+            recyclerAddMediaTextView.text=exercise.media
         }
-
-        //holder.itemView.setOnClickListener{
-         //   itemListener.exerciseSelected(exercise) }
     }
-
-    /*interface ExerciseItemListener {
-        fun exerciseSelected(exercise: Exercise)
-    }*/
 }

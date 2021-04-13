@@ -77,6 +77,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addInstructions" />
 
+    <EditText
+        android:id="@+id/addMedia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/add_video_link"
+        android:inputType="textWebEditText"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addNotes"
+        />
+
     <Button
         android:id="@+id/addExerciseButton"
         android:layout_width="wrap_content"

@@ -7,6 +7,6 @@ data class Exercise (
         var exercise_name: String?=null,
         var repetitions: String?=null,
         var instructions: String?=null,
-        var notes: String?=null
-       // , var media: String?=null
+        var notes: String?=null,
+        var media: String?=null
 )

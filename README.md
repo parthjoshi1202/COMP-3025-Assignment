@@ -8,3 +8,7 @@ Sample email login credentials: Email: test@tester.com
 Name: Parth Joshi
 Password: 123456p
 
+Email: test2@test.com
+Name: Testy Test
+Password: 123456p
+

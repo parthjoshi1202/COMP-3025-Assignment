@@ -2,9 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lh1126914.comp3025assignment">
 
-    <!-- Accessing external storage-->
+     <!-- Accessing external storage -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,34 +15,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.COMP3025Assignment">
-        <activity android:name="com.lh1126914.comp3025assignment.SignInActivity" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".SignInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name="com.lh1126914.comp3025assignment.AddActivity" ></activity>
-        <activity android:name="com.lh1126914.comp3025assignment.ExerciseRecyclerViewActivity"/>
-        <activity android:name="com.lh1126914.comp3025assignment.MainActivity" />
+        <activity android:name=".AddActivity" />
+        <activity android:name=".ExerciseRecyclerViewActivity" />
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
-
-        <!-- file provider for photos -->
+            android:resource="@array/preloaded_fonts" /> <!-- file provider for photos -->
         <provider
-            android:authorities="com.lh1126914.comp3025assignment.fileProvider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.lh1126914.comp3025assignment.fileProvider"
             android:enabled="true"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_path"
-                />
-    </provider>
-
+                android:resource="@xml/file_path" />
+        </provider>
     </application>
 
 </manifest>

@@ -12,28 +12,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/headerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="@string/add_an_exercise"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mainToolBar"
-        android:layout_marginTop="10dp"
-        android:textSize="28sp" />
+        app:layout_constraintTop_toBottomOf="@id/mainToolBar" />
 
     <EditText
         android:id="@+id/addExerciseName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
         android:layout_marginTop="20dp"
-        android:padding="20dp"
         android:hint="@string/enter_exercise_name"
+        android:inputType="text"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerTextView" />
@@ -42,11 +41,11 @@
         android:id="@+id/addRepetitions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
         android:layout_marginTop="20dp"
-        android:padding="20dp"
+        android:gravity="start|top"
         android:hint="@string/add_repetitions"
+        android:inputType="textMultiLine"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addExerciseName" />
@@ -55,10 +54,10 @@
         android:id="@+id/addInstructions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:hint="@string/add_instructions"
         android:layout_marginTop="20dp"
+        android:gravity="start|top"
+        android:hint="@string/add_instructions"
+        android:inputType="textMultiLine"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,16 +67,15 @@
         android:id="@+id/addNotes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_marginTop="20dp"
-        android:padding="20dp"
+        android:ems="10"
         android:gravity="start|top"
-        android:inputType="text"
         android:hint="@string/add_notes"
+        android:inputType="text"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addInstructions"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/addInstructions" />
 
     <Button
         android:id="@+id/addExerciseButton"
@@ -87,26 +85,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
-    <Button
-        android:id="@+id/chooseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/choose"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addNotes" />
-
-    <ImageView
-        android:id="@+id/exerciseImageView"
-        android:layout_width="214dp"
-        android:layout_height="181dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseButton"
-        tools:srcCompat="@tools:sample/avatars"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

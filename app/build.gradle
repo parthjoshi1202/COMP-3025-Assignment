@@ -47,6 +47,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:22.1.1'
     implementation 'com.google.firebase:firebase-storage:19.2.2'
     implementation 'com.google.firebase:firebase-database:19.7.0'
+    implementation 'androidx.wear:wear:1.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -65,4 +66,10 @@ dependencies {
     // These are used for the prebuilt Firebase user login / logout features
     implementation platform('com.google.firebase:firebase-bom:26.0.0')
     implementation 'com.google.firebase:firebase-auth-ktx'
+
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    //compileOnly 'com.google.android.wearable:wearable:2.6.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }

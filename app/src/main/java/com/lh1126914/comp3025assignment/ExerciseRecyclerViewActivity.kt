@@ -34,7 +34,7 @@ class ExerciseRecyclerViewActivity : AppCompatActivity(){
 
         setSupportActionBar(binding.mainToolBar.toolbar)
 
-        //binding.recyclerViewVertical=ScrollingMovementMethod()
+        binding.recyclerViewVertical.smoothScrollToPosition(0)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

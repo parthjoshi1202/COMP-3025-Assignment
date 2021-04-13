@@ -11,7 +11,6 @@
 
     <string name="add_exercise">Add Exercise</string>
     <string name="choose">Choose</string>
-    <string name="add_image_name">Add Image Name</string>
     <string name="upload">Upload</string>
     <string name="exercises">Exercises</string>
     <string name="add_notes">Add Notes</string>
@@ -21,4 +20,11 @@
     <string name="your_exercises">Your Exercises</string>
     <string name="logout">Logout</string>
     <string name="list_of_exercises">List of Exercises</string>
+    <string name="title_activity_upload">UploadActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="add_image_name">Add Image Name</string>
 </resources>

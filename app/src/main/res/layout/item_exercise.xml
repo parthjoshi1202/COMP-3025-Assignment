@@ -12,48 +12,53 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:showDividers="end"
+        android:divider="@drawable/divider_drawable"
         android:orientation="vertical"
-        android:divider="@drawable/divider_drawable">
+        android:showDividers="end">
 
-    <TextView
-        android:id="@+id/exerciseNameRecyclerTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:fontFamily="@font/capriola"
-        android:textSize="30sp"
-        tools:text="Stretch" />
+        <TextView
+            android:id="@+id/exerciseNameRecyclerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/capriola"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            tools:text="Stretch" />
 
-    <TextView
-        android:id="@+id/recyclerAddRepetitionTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight=".9"
-        tools:text="5" />
+        <TextView
+            android:id="@+id/recyclerAddRepetitionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_weight=".9"
+            tools:text="5" />
 
-    <TextView
-        android:id="@+id/recyclerAddInstructionsTextView"
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:layout_weight=".9"
-        tools:text="On your toes and hands up" />
+        <TextView
+            android:id="@+id/recyclerAddInstructionsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_margin="5sp"
+            android:layout_weight=".9"
+            tools:text="On your toes and hands up" />
 
-    <TextView
-        android:id="@+id/recyclerAddNotesTextView"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:layout_weight=".8"
-        tools:text="warm up or cool down your body" />
+        <TextView
+            android:id="@+id/recyclerAddNotesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_margin="5sp"
+            android:layout_weight=".8"
+            tools:text="warm up or cool down your body" />
 
-    <TextView
-        android:id="@+id/recyclerAddMediaTextView"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:layout_weight=".8"
-        tools:text="https://www.youtube.com/watch?v=IODxDxX7oi4"
-        android:linksClickable="true"
-        android:autoLink="web" />
+        <TextView
+            android:id="@+id/recyclerAddMediaTextView"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_margin="5sp"
+            android:layout_weight=".8"
+            android:autoLink="web"
+            android:linksClickable="true"
+            tools:text="https://www.youtube.com/watch?v=IODxDxX7oi4" />
 
     </LinearLayout>
 </android.widget.LinearLayout>

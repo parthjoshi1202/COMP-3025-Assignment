@@ -16,9 +16,16 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/app_bar_profile"
+        android:title="@string/view_your_profile"
+        app:actionViewClass="android.widget.SearchView" />
+
+    <item
         android:id="@+id/app_bar_logout"
         android:title="@string/logout"
         app:actionViewClass="android.widget.SearchView" />
+
+
 
 
 </menu>

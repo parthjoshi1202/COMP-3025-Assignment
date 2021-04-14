@@ -28,4 +28,6 @@
     <string name="hello_world">Hello Square World!</string>
     <string name="add_image_name">Add Image Name</string>
     <string name="add_video_link">Add Video Link</string>
+    <string name="back">Back</string>
+    <string name="view_your_profile">View your Profile</string>
 </resources>

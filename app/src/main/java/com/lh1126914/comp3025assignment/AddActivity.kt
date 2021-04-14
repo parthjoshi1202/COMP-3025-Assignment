@@ -91,6 +91,10 @@ class AddActivity : AppCompatActivity() {
                 startActivity(Intent(applicationContext, SignInActivity::class.java))
                 //return true
             }
+            R.id.app_bar_profile-> {
+                startActivity(Intent(applicationContext, UserProfileActivity::class.java))
+                return true
+            }
         }
         return  super.onOptionsItemSelected(item)
     }

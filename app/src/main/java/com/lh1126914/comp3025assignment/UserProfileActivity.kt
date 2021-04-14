@@ -3,41 +3,39 @@ package com.lh1126914.comp3025assignment
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.method.ScrollingMovementMethod
 import android.view.Menu
 import android.view.MenuItem
-import androidx.activity.viewModels
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.RecyclerView
-import com.lh1126914.comp3025assignment.databinding.ActivityExerciseRecyclerViewBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.lh1126914.comp3025assignment.databinding.ActivityUserProfileBinding
 
-/**
- * Recycler View Activity for Exercise
- */
+class UserProfileActivity : AppCompatActivity() {
 
-class ExerciseRecyclerViewActivity : AppCompatActivity(){
-
-    private lateinit var binding: ActivityExerciseRecyclerViewBinding
-    private val authDb= FirebaseAuth.getInstance()
+    private lateinit var binding: ActivityUserProfileBinding
+    private val authDb=FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityExerciseRecyclerViewBinding.inflate(layoutInflater)
+        binding= ActivityUserProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val model: ExerciseListViewModel by viewModels()
-        model.getExercises().observe(this, Observer<List<Exercise>>{ exercises->
-            var recyclerAdapter=RecyclerViewAdapter(this, exercises)
-            binding.recyclerViewVertical.adapter=recyclerAdapter
+        if(authDb.currentUser==null)
+            logout()
 
-        })
+        //displaying username and email address
+        authDb.currentUser?.let { user->
+            binding.userNameTextView.text=user.displayName
+            binding.emailTextView.text=user.email
+        }
+
+        binding.backButton.setOnClickListener{
+            startActivity(Intent(applicationContext, ExerciseRecyclerViewActivity::class.java))
+        }
+
+        binding.logOutButton.setOnClickListener{
+            logout()
+        }
 
         setSupportActionBar(binding.mainToolBar.toolbar)
-
-        binding.recyclerViewVertical.scrollToPosition(0)
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -52,7 +50,7 @@ class ExerciseRecyclerViewActivity : AppCompatActivity(){
                 return true
             }
             R.id.action_list-> {
-                //startActivity(Intent(applicationContext, ExerciseRecyclerViewActivity::class.java))
+                startActivity(Intent(applicationContext, ExerciseRecyclerViewActivity::class.java))
                 return true
             }
             R.id.app_bar_logout-> {
@@ -62,11 +60,16 @@ class ExerciseRecyclerViewActivity : AppCompatActivity(){
                 //return true
             }
             R.id.app_bar_profile-> {
-                startActivity(Intent(applicationContext, UserProfileActivity::class.java))
+                //startActivity(Intent(applicationContext, UserProfileActivity::class.java))
                 return true
             }
         }
         return  super.onOptionsItemSelected(item)
     }
-}
 
+    private fun logout() {
+        authDb.signOut()
+        finish()
+        startActivity(Intent(applicationContext, SignInActivity::class.java))
+    }
+}

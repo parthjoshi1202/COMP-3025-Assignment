@@ -12,3 +12,4 @@ Email: test2@test.com
 Name: Testy Test
 Password: 123456p
 
+Play store link: (early version) https://play.google.com/store/apps/details?id=com.lh1126914.comp3025assignment
